@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="css/style.css"rel="stylesheet"></link>
+  </head>
+
+  <body>
+
+    <span id="radio-group">
+      <input id="no-worker" type="radio" name="worker" value="no-worker" checked="true">Don't use a worker</input>
+      <input id="use-worker" type="radio" name="worker" value="use-worker">Use a worker</input>
+    </span>
+
+   <input id ="start-stop" type="button" name="start-stop" value="Start animations" />
+
+
+      <input id ="pointless-computations" type="button" name="pointless-computations" value="Do pointless computations!" />
+
+    <div id="container" class="use-transform">
+      <div class="moving-box" id="moving-box1" id="moving-box-transform"></div>
+      <div class="moving-box" id="moving-box2" id="moving-box-transform"></div>
+      <div class="moving-box" id="moving-box3" id="moving-box-transform"></div>
+      <div class="moving-box" id="moving-box4" id="moving-box-transform"></div>
+    </div>
+
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+
+</html>
