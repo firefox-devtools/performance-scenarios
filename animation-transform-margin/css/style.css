@@ -1,8 +1,5 @@
 
 .moving-box {
-  color: white;
-  font-size: xx-small;
-  overflow:hidden;
   animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
   animation-iteration-count: infinite;
   animation-direction: alternate;
