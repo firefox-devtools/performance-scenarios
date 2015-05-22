@@ -6,10 +6,11 @@
   animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  height: 30px;
-  width: 30px;
+  height: 5px;
+  width: 5px;
   margin: 2%;
   padding: 2%;
+  box-shadow: 2px 6px 10px 10px pink;
 }
 
 .use-transform.started > .moving-box {

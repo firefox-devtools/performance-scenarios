@@ -1,0 +1,40 @@
+
+html {
+  width: 100%;
+}
+
+body {
+  width: 80%;
+}
+
+.mover {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background: radial-gradient(circle, #1a82f7, #2F2727);
+  border-radius: 50px;
+}
+
+#container {
+  max-width: auto;
+  float: left;
+}
+
+.resizable {
+  padding: 1em;
+  white-space: pre-wrap;
+}
+
+#histogram {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.bucket {
+  background: blue;
+  flex-basis: 1.2em;
+  margin: 0.2em;
+  width: 100%;
+  color: white;
+}
