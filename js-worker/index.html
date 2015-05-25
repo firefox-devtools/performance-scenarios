@@ -8,14 +8,14 @@
   <body>
 
     <span id="radio-group">
-      <input id="no-worker" type="radio" name="worker" value="no-worker" checked="true">Don't use a worker</input>
+      <input id="use-blocking-js" type="radio" name="worker" value="use-blocking-js" checked="true">Use blocking call in main thread</input>
+      <input id="use-request-animation-frame" type="radio" name="worker" value="request-animation-frame">Use requestAnimationFrame</input>
       <input id="use-worker" type="radio" name="worker" value="use-worker">Use a worker</input>
     </span>
 
+   <input id ="pointless-computations" type="button" name="pointless-computations" value="Do pointless computations!" />
+
    <input id ="start-stop" type="button" name="start-stop" value="Start animations" />
-
-
-      <input id ="pointless-computations" type="button" name="pointless-computations" value="Do pointless computations!" />
 
     <div id="container" class="use-transform">
       <div class="moving-box" id="moving-box1" id="moving-box-transform"></div>

@@ -1,29 +1,32 @@
-self.addEventListener("message", calculate);
+self.addEventListener("message", go);
 
-var primes = [];
-
-function calculate(message) {
+function go(message) {
   var iterations = message.data.iterations;
   var multiplier = message.data.multiplier;
-  for (var i = 0; i < iterations; i++) {
-    isPrime(i * (multiplier * Math.random()));
-  }
+  primes = calculatePrimes(iterations, multiplier);
 
   self.postMessage({
-    "command":"finished",
+    "command":"done",
     "primes": primes
   });
-
-  primes.length = 0;
 }
 
-function isPrime(n) {
-  for (var c = 2; c <= Math.sqrt(n); ++c) {
-    if (n % c === 0) {
-        // not prime
-        return;
-     }
+function calculatePrimes(iterations, multiplier) {
+  var primes = [];
+  for (var i = 0; i < iterations; i++) {
+    var candidate = i * (multiplier * Math.random());
+    var isPrime = true;
+    for (var c = 2; c <= Math.sqrt(candidate); ++c) {
+      if (candidate % c === 0) {
+          // not prime
+          isPrime = false;
+          break;
+       }
+    }
+    if (isPrime) {
+      primes.push(candidate);
+    }
   }
-  // is prime
-  primes.push(n);
+  return primes;
 }
+
