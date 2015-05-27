@@ -1,0 +1,84 @@
+
+.moving-box {
+  color: white;
+  font-size: xx-small;
+  overflow:hidden;
+  animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  margin: 2%;
+  padding: 2%;
+}
+
+.use-transform.started > .moving-box {
+  animation-name: use-transform;
+}
+
+.use-margin.started > .moving-box  {
+  animation-name: use-margin;
+}
+
+#moving-box1 {
+  border-radius: 25px;
+  animation-duration: 3s;
+  background-image:
+    linear-gradient(
+      teal,
+      silver
+    );
+  box-shadow: 2px 6px 10px 10px pink;
+}
+
+#moving-box2 {
+  border-radius: 100px;
+  animation-duration: 2s;
+  background-image:
+    radial-gradient(
+      red,
+      seagreen
+    );
+  box-shadow: 2px 6px 10px 10px pink;
+}
+
+#moving-box3 {
+  animation-duration: 1s;
+  background-image:
+    linear-gradient(
+      orange,
+      blue
+    );
+  box-shadow: 2px 6px 10px 10px pink;
+}
+
+#moving-box4 {
+  background-color: pink;
+  animation-duration: 0.5s;
+  background-image:
+    radial-gradient(
+      green,
+      indigo
+    );
+  box-shadow: 2px 6px 10px 10px pink;
+}
+
+@keyframes use-transform {
+  from {
+    transform: translate(90vw);
+  }
+  
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes use-margin {
+  from {
+    margin-left: 90vw;
+  }
+  
+  to {
+    margin-left: 0;
+  }
+}
+
+
