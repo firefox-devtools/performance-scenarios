@@ -120,12 +120,6 @@ function sort(unsorted) {
   console.log(quickSort(unsorted));
 }
 
-function timedSort(unsorted) {
-  setTimeout(function() {
-    sort(unsorted);
-  }, 1);
-}
-
 function sortAll() {
   for (var i = 2; i <= iterations; ++i) {
     var unsorted = [];
