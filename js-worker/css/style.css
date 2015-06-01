@@ -1,15 +1,4 @@
 
-body{
-background-color: rgb(0, 150, 221);
-}
-
-#welcome {
-  color: white;
-  margin: 5px;
-  margin-top:10px;
-  font-family: sans-serif;
-}
-
 .moving-box {
   color: white;
   font-size: xx-small;
