@@ -1,4 +1,4 @@
-const iterations = 50;
+const iterations = 100;
 const multiplier = 1000000000;
 
 var worker = new Worker("js/calculate.js");
