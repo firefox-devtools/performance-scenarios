@@ -1,6 +1,3 @@
-/**
- * Exactly the same code as in calculate.js
- */
 function calculatePrimes(iterations, multiplier) {
   var primes = [];
   for (var i = 0; i < iterations; i++) {
