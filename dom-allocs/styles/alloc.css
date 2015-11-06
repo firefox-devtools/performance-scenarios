@@ -1,0 +1,8 @@
+.toolbarbutton {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0.5em;
+  background-image: radial-gradient(#F00, #2E8B57);
+  border-radius: 20px;
+}
