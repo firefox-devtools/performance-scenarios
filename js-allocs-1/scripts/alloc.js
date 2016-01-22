@@ -19,7 +19,7 @@ function makeWord() {
 }
 
 function makeWords() {
- 
+  words.length = 0;
   for (var i = 0; i < WORD_COUNT; i++) {
     words.push(makeWord());
   }
