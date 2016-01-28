@@ -1,55 +1,49 @@
-var MIN_WORD_LENGTH = 2;
-var MAX_WORD_LENGTH = 100;
-var ITERATION_COUNT = 10;
-var ITERATION_LENGTH = 5000;
+var MONSTER_COUNT = 5000;
+var MIN_NAME_LENGTH = 2;
+var MAX_NAME_LENGTH = 48;
 
-function MyStuff() {
-  this.thingCollections = [];
-  this.name = "my collections of things";
+function Monster() {
 
-  this.makeThingCollections = function() {
-    for (var i = 0; i < ITERATION_COUNT; i++) {
-      this.makeThingCollection();
-    }
-  };
-  
-  this.makeThingCollection = function() {
-    var thingCollection = [];
-    for (var i = 0; i < ITERATION_LENGTH; i++) {
-      var thing = this.makeNewThing();
-      thingCollection.push(thing);
-    }
-    this.thingCollections.push(thingCollection);
-  };
-  
-  this.makeNewThing = function() {
-    function getRandomInt(min, max) {
+  function randomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
+  function randomName() {
     var chars = "abcdefghijklmnopqrstuvwxyz";
-    var wordLength = getRandomInt(MIN_WORD_LENGTH, MAX_WORD_LENGTH);
-    var word = "";
-    for (var j = 0; j < wordLength; j++) {
-      word += chars[getRandomInt(0, chars.length-1)];
+    var nameLength = randomInt(MIN_NAME_LENGTH, MAX_NAME_LENGTH);
+    var name = "";
+    for (var j = 0; j < nameLength; j++) {
+      name += chars[randomInt(0, chars.length-1)];
     }
-    return new RegExp(word);
-  };
-  
-  this.logThings = function() {
-    console.log(this.thingCollections);
-  };
-  
-  this.clearThings = function() {
-    this.thingCollections.length = 0;
-  };  
-  
+    return name;
+  }
+
+  this.name = randomName();
+  this.eyeCount = randomInt(0, 25);
+  this.tentacleCount = randomInt(0, 250);
 }
 
-var myStuff = new MyStuff();
+function makeMonsters() {
+  var monsters = {
+    "friendly": [],
+    "fierce": [],
+    "undecided": []
+  };
 
-var makeThings = document.getElementById("make-things");
-makeThings.addEventListener("click", function () {
-  myStuff.makeThingCollections();
-  myStuff.logThings();
-});
+  for (var i = 0; i < MONSTER_COUNT; i++) {
+    monsters.friendly.push(new Monster());
+  }
+
+  for (var i = 0; i < MONSTER_COUNT; i++) {
+    monsters.fierce.push(new Monster());
+  }
+
+  for (var i = 0; i < MONSTER_COUNT; i++) {
+    monsters.undecided.push(new Monster());
+  }
+
+  console.log(monsters);
+}
+
+var makeMonstersButton = document.getElementById("make-monsters");
+makeMonstersButton.addEventListener("click", makeMonsters);
